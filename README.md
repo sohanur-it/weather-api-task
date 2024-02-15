@@ -1,7 +1,7 @@
 #Assessment WeatherAPI
 
 <h4>
-I've dockerized the project to seamlessly integrate multiple components: a Django app, a Redis server serving as a broker, Celery for asynchronous task management, and Celery Beat for scheduling periodic tasks. This setup efficiently handles various functionalities, such as fetching data from NewsAPI every 60 minutes and automatically saving any new data into the database
+I've dockerized the project to seamlessly integrate multiple components: a Django app, a Redis server serving as a broker, Celery for asynchronous task management, and Celery Beat for scheduling periodic tasks. This setup efficiently handles various functionalities, such as fetching data from open-meteo API every 60 minutes and automatically saving any new data into the database.
 </h4>
 
 
