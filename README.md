@@ -20,7 +20,7 @@ Used Technolgies :
 <p>
 docker-compose up --build -d
 </p>
-Now go to <a href="http://127.0.0.1">http://127.0.0.1</a> 
+Now go to <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> 
 
 <h2>API Documentation</h2>
 <p>
