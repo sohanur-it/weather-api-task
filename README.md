@@ -39,6 +39,15 @@ Features:
 <b>Part2 - Done </b>
 <br>
 <u>127.0.0.1/api/check-location/</u><br>
+</li>
+</ul>
+
+<h3>
+  Postman Collections
+</h3>
+<p >
+  https://api.postman.com/collections/18762711-ca81f87b-b0e9-42ed-8891-5eaf79a7a5ef?access_key=PMAT-01HPNK8N7FZZB6E7Q8HJRH1EZQ
+</p>
 
 <h3>
 SQLITE3 Superadmin Creds:
