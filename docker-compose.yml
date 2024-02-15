@@ -1,0 +1,57 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./weather_vol:/weather_vol
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py wait_for_db &&
+             python manage.py runserver 0.0.0.0:8000"
+
+    depends_on:
+      - db
+
+    env_file:
+      - ./.env
+
+  db:
+    image: postgres:10-alpine
+    container_name: db
+    hostname: db
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres"
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:alpine
+
+  celery:
+    restart: always
+    build:
+      context: .
+    command: celery -A weather_api_project.celery worker -l info
+    volumes:
+      - ./weather_vol:/weather_vol
+    depends_on:
+      - redis
+      - app
+      - db
+
+  celery-beat:
+    build:
+      context: .
+    command: celery -A weather_api_project.celery beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    volumes:
+      - ./weather_vol:/weather_vol
+    depends_on:
+      - redis
+      - app
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres"
