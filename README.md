@@ -24,7 +24,7 @@ Now go to <a href="http://127.0.0.1">http://127.0.0.1</a>
 
 <h2>API Documentation</h2>
 <p>
-http://127.0.0.1/docs
+http://127.0.0.1
 </p>
 
 <h2>
@@ -39,5 +39,15 @@ Features:
 <b>Part2 - Done </b>
 <br>
 <u>127.0.0.1/api/check-location/</u><br>
+
+<h3>
+SQLITE3 Superadmin Creds:
+</h3>
+<p>
+
+username: admin <br>
+
+password: admin123
+</p>
 
 </ul>
